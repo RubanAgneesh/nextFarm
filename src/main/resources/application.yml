@@ -1,0 +1,104 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  application:
+    name: Documends
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/internaltools
+    username: postgres
+    password: postgres
+    initialization-mode: never
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+      temp:
+        use_jdbc_metadata_defaults: false
+    hibernate:
+      ddl-auto: create
+      show-sql: true
+      database: documends
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+      open-in-view: false
+      generate-ddl: false
+      properties.hibernate.temp.use_jdbc_metadata_defaults: false
+      id:
+       new_generator_mappings: false
+  mail:
+    default-encoding: UTF-8
+    host: mail.smtp2go.com
+    username: loganathanr@piraiinfo.com
+    password: Pirai@2021
+    port: 2525
+    protocol: smtp
+    test-connection: false
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  jackson:
+   serialization:
+    WRITE_DATES_AS_TIMESTAMPS: true
+   time-zone: UTC
+server:
+  port: 8085
+  compression:
+   enabled: true
+  error:
+    whitelabel:
+      enabled: false
+app:
+ jwtSecret: documendsSecretKey
+ jwtExpirationInMs: 604800000
+ firebase-configuration-file: google/dockket-dev-firbase-pushnotification.json
+logging:
+ level:
+  org:
+  hibernate:
+   SQL: DEBUG
+   type:
+     descriptor:
+       sql:
+         BasicBinder: TRACE
+documends:
+  documends-web:
+    url: http://localhost:9000/
+    registerUrl: https://devwebapp.dockket.com/registration/
+  expiration:
+    time: 5 
+  social:
+    facebook:
+      appId: 710583982820309
+      appSecret: 1d5b56ad90ec02ef110e45e8dd2e1ba5
+  aws:
+    api:
+      access:
+        key: XXXXXXXXXXXXX
+      secret:
+        key: XXXXXXXXXXXXX
+      endpoint: 
+        url: XXXXXXXXXXXXX
+      bucketName: XXXXXXXXXXXXX 
+      region: eu-west-1 
+  jobs:
+    enabled: true      
+stripe:
+  keys:
+    public: pk_test_51Iiu1GAEfK0hKnwsq8tfcGcDDeSIp1YSVzFppMjEufSdU6GQhO1fcHgimdG4qPRjKw9uAPELRlFLr8ao2HP5OZtO00981SzSDz
+    secret: sk_test_51Iiu1GAEfK0hKnwses3Va05yG7ERbWCDp89b5a3FyqFd1EZ10aYyEEXJjefVT8N1b766q6rat8cswt3S3YQx0iF900o2Bkl8VV
+  test:
+    creditcard:4242424242424242
+  refreshurl: https://www.documends.app/
+  returnUrl:  https://dashboard.stripe.com/
+  country: MY
+  

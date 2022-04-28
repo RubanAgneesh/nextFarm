@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="x-apple-disable-message-reformatting"> 
+    <title>Signin otp</title> 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet">
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+        html,
+body {
+    margin: 0 auto !important;
+    padding: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+    background: #f1f1f1;
+}
+
+
+* {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+
+div[style*="margin: 16px 0"] {
+    margin: 0 !important;
+}
+
+
+table,
+td {
+    mso-table-lspace: 0pt !important;
+    mso-table-rspace: 0pt !important;
+}
+
+
+table {
+    border-spacing: 0 !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+    margin: 0 auto !important;
+}
+
+
+img {
+    -ms-interpolation-mode:bicubic;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+*[x-apple-data-detectors],  /* iOS */
+.unstyle-auto-detected-links *,
+.aBn {
+    border-bottom: 0 !important;
+    cursor: default !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+
+
+.a6S {
+    display: none !important;
+    opacity: 0.01 !important;
+}
+
+
+.im {
+    color: inherit !important;
+}
+
+
+img.g-img + div {
+    display: none !important;
+}
+
+
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+    u ~ div .email-container {
+        min-width: 320px !important;
+    }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+    u ~ div .email-container {
+        min-width: 375px !important;
+    }
+}
+
+@media only screen and (min-device-width: 414px) {
+    u ~ div .email-container {
+        min-width: 414px !important;
+    }
+}
+@media only screen and (min-device-width: 500px) {
+    u ~ div .email-container {
+        min-width: 414px !important;
+    }
+	.logo img{
+		padding-left: 100px;
+	}
+}
+
+
+    </style>
+
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+	    .primary{
+	background: #f1c638;
+}
+.bg_white{
+	background: #ffffff;
+}
+.bg_light{
+	background: #fafafa;
+}
+.bg_black{
+	background: #D3D3D3;
+}
+.bg_dark{
+	background: rgba(0,0,0,.8);
+}
+.email-section{
+	padding:1.0em;
+}
+.email-section1{
+	padding: 0em;
+}
+
+
+/*BUTTON*/
+.btn{
+	padding: 5px 18px;
+	display: inline-block;
+}
+.btn.btn-primary{
+	border-radius: 5px;
+	background: #f1c638;
+	color: #000;
+}
+.btn.btn-white{
+	border-radius: 5px;
+	background: #ffffff;
+	color: #000000;
+}
+.btn.btn-white-outline{
+	border-radius: 5px;
+	background: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+}
+.btn.btn-apptheme{
+	border-radius: 5px;
+	background:#EAEAEA;
+	color: #000;
+}
+.btn-otp{
+	border-radius: 5px;
+	background: #42A341;
+	color: #fff;
+    padding: 3px 16px;
+	display: inline-block;
+    font-size:15px;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Roboto', sans-serif;
+	color: #000000;
+	margin-top: 0;
+}
+
+body{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 1.8;
+	color: rgba(0,0,0,.4);
+}
+mark{
+	/* background-color: #42A341; */
+	color:#000;
+	font-weight:700;
+}
+
+a{
+	color: #0077ED;
+}
+
+/*LOGO*/
+
+.logo img{
+	margin: 8px;
+}
+.logo h1 a{
+	color: #000000;
+	font-size: 25px;
+	font-weight: 600;
+	font-family: 'Roboto', sans-serif;
+}
+
+.navigation{
+	padding: 0;
+}
+.navigation li{
+	list-style: none;
+	display: inline-block;;
+	margin-left: 5px;
+	font-size: 13px;
+	font-weight: 500;
+}
+.navigation li a{
+	color:#0077ED;
+}
+
+/*HERO*/
+.hero{
+	position: relative;
+	z-index: 0;
+}
+.hero .overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: '';
+	width: 100%;
+	background: #000000;
+	z-index: -1;
+	opacity: .3;
+}
+/* .hero .icon{
+} */
+.hero .icon a{
+	display: block;
+	width: 60px;
+	margin: 0 auto;
+}
+.hero .text p{
+	/* color: rgba(0,0,0,.8); */
+	color: #fff;
+}
+.hero .text h2{
+	color: #000;
+	font-size: 28px;
+	margin-bottom: 0;
+	font-weight: 200;
+	line-height: 1.4;
+}
+
+
+/*HEADING SECTION*/
+/* .heading-section{
+} */
+.heading-section h2{
+	color: #000000;
+	font-size: 16px;
+	margin-top: 0;
+	line-height: 1.6;
+	font-weight: 600;
+}
+
+.heading-section p{
+    font-size: 15px;
+    color:#000;
+    font-family: 'Roboto', sans-serif;
+	line-height: 1.5;
+
+}
+
+.heading-section1 h2{
+    font-size: 14px;
+    color:#000;
+    font-family: 'Roboto', sans-serif;
+	line-height: 1.0;
+
+}
+.heading-section1 p{
+    font-size: 15px;
+    color:#000;
+    font-family: 'Roboto', sans-serif;
+	line-height: 0.7;
+
+}
+
+.heading-section .subheading{
+	margin-bottom: 20px !important;
+	display: inline-block;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: rgba(0,0,0,.4);
+	position: relative;
+}
+.heading-section .subheading::after{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -10px;
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: #f1c638;
+	margin: 0 auto;
+}
+
+.heading-section-white{
+	color: rgba(255,255,255,.8);
+}
+.heading-section-white h2{
+	font-family: 'Times New Roman', Times, serif;
+	line-height: 1;
+	padding-bottom: 0;
+}
+.heading-section-white h2{
+	color: #ffffff;
+}
+.heading-section-white .subheading{
+	margin-bottom: 0;
+	display: inline-block;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: rgba(255,255,255,.4);
+}
+
+
+.icon{
+	text-align: center;
+}
+/* .icon img{
+} */
+
+
+.img{
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+.img .icon{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin-top: -25px;
+}
+.img .icon a{
+	display: block;
+	width: 60px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -25px;
+}
+
+
+ul.social{
+	padding: 0px 0 0 15px;
+}
+ul.social li{
+	display: inline-block;
+	margin-right: 10px;
+
+}
+
+
+@media screen and (max-width: 500px) {
+
+	.icon{
+		text-align: left;
+	}
+}
+
+
+    </style>
+
+
+</head>
+
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #222222;">
+	<center style="width: 100%; background-color: #f1f1f1;">
+    <!-- <div style="display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+      &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+    </div> -->
+    <div style="max-width: 600px; margin: 0 auto;" class="email-container">
+    	<!-- BEGIN BODY -->
+      <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+      	<tr>
+          <td valign="top" class="bg_white" style="padding: 0em 2.5em;">
+          	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<td valign="top" class="bg_white" style="padding: 0em 2.5em;">
+						<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td width="100%" class="logo" style="text-align: center;">
+								  <!-- <h1><a href="#">docKKet</a></h1> -->
+								  <img src="https://documends-essential.s3.eu-west-1.amazonaws.com/pictures+given+by+developers/Dockket_logo_f1.png" alt="" style="width:200px; height:50px;display:block;">
+
+								</td>
+								<!-- <td width="60%" class="logo" style="text-align: right;">
+								  <ul class="navigation">
+									  <li><a href="#">dockket.com</a></li>
+								  </ul>
+								</td> -->
+							</tr>
+						</table>
+					</td>
+					</tr>
+          	</table>
+          </td>
+	      </tr><!-- end tr border-collapse: collapse;border: 1px solid black-->
+				<tr>
+          <td valign="middle" class="hero bg_white"style="background-color:#0077ED;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+            	<tr>
+            		<td valign="middle" width="50%">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td>
+                        <img src="https://documends-essential.s3.eu-west-1.amazonaws.com/website+pictures/bg_img.png" alt="" style="width: 80%; max-width: 600px; height: auto; margin: auto; display: block;">
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <!-- class="primary" -->
+                <td valign="middle" width="60%" >
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td class="text" style="text-align: left; padding: 20px 30px;">
+						<h2>Welcome to <strong style='color: #fff;font-size: 25px'>DocKKet</strong></h2>
+				              	<p>Track all your dockets easily whenever and wherever you are!</p>
+				              	<!-- <p><a href="#" class="btn btn-apptheme">Access your account</a></p> -->
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <!-- <hr  style=" border-top: 2px solid #000;width:60%;text-align:center;margin-left:110px"> -->
+            	</tr>
+                
+            </table>
+          </td>
+          
+	      </tr>
+          
+         
+          <!-- end tr <a href="#" class="btn-otp">-->
+          
+	      <tr >
+		      <td class="bg_white">
+		        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+		          <tr>
+		            <td class="bg_white email-section">
+		            	<div class="heading-section" style="text-align: left; padding: 0 18px;">
+		              	<h2>Hi User,</h2>
+		              	<p>Greetings!</p><p>You are just a step away from accessing your DocKKet account.</p>
+							<p>We are sharing a verification code to access your account.</p>
+							<p>Once we have verified the code, you'll be prompted to set a new password immediately. 
+								This is to ensure that only you have access to your account.</p>
+						<p>Your <strong>OTP</strong>:<strong style="font-size: 18px;font: weight 600px;">$user.otp</strong></p>
+						<p>Best Regards,<br>Team DocKKet</p>
+						
+						
+						
+						<!-- <hr  style="width:60%;text-align:center;margin-left:20%"> -->
+						
+                        
+		            	</div>
+                        
+		            </td>
+		          </tr>
+				  
+                  <!-- end: tr -->
+				  
+                 
+		          <tr>
+		            <td class="bg_white email-section1">
+						<table class="heading-section1" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+		            		<tr>
+								<td width="100%" style="text-align: center;">
+									<hr  style="width:60%;text-align:center;margin-left:20%;">
+                                    <p style="font: size 14px;
+									color: black;
+									font-family: 'Roboto', sans-serif;
+									font-weight: 700;">To know us more<br></p>
+									<a target="_blank" href="https://www.facebook.com/Dockket-103128608709794/"><img src="https://documends-essential.s3.eu-west-1.amazonaws.com/website+pictures/Fb.png" alt="" style="margin-right:6px;width: 24px; max-width: 600px; height: auto; display: inline-block;"></a>
+										<a target="_blank" href="https://www.youtube.com/channel/UCD6iEPPYgVdFfqmrehMa5Nw"><img src="https://documends-essential.s3.eu-west-1.amazonaws.com/website+pictures/youtube.png" alt="" style="margin-right:6px; width: 30px; max-width: 600px; height: 24px; display: inline-block;"></a>
+										<a target="_blank" href="https://www.instagram.com/dockket1/"><img src="https://documends-essential.s3.eu-west-1.amazonaws.com/website+pictures/Insta+png.png" alt="" style="margin-right:6px; width: 24px; max-width: 600px; height: auto; display:  inline-block;"></a>
+										<a target="_blank" href="https://g.co/kgs/jn93oL"><img src="https://documends-essential.s3.eu-west-1.amazonaws.com/website+pictures/website1.png" alt="" style="margin-right:6px; width: 24px; max-width: 600px; height: auto; display: inline-block;"></a>
+                                </td>
+                    </tr>
+		            	</table>
+		            	<!-- <div class="heading-section1" style="text-align: center; padding: 0 30px;">
+		              	<h2>Details</h2>
+						  <hr  style="width:60%;text-align:center;margin-left:20%;">
+						  <p style="font: size 14px;
+									color: black;
+									font-family: 'Roboto', sans-serif;
+									font-weight: 700;">To know us more</p>
+                                    <ul class="social">
+                                        
+										<li><a href="https://www.facebook.com/Dockket-103128608709794/"><img src="https://documends-essential.s3.eu-west-1.amazonaws.com/website+pictures/Fb.png" alt="" style="width: 24px; max-width: 600px; height: auto; display: block;"></a></li>
+										<li><a href="https://www.youtube.com/channel/UCD6iEPPYgVdFfqmrehMa5Nw"><img src="https://documends-essential.s3.eu-west-1.amazonaws.com/website+pictures/youtube.png" alt="" style="width: 30px; max-width: 600px; height: 24px; display: block;"></a></li>
+										<li><a href="https://www.instagram.com/dockket1/"><img src="https://documends-essential.s3.eu-west-1.amazonaws.com/website+pictures/Insta+png.png" alt="" style="width: 24px; max-width: 600px; height: auto; display: block;"></a></li>
+										<li><a href="https://g.co/kgs/jn93oL"><img src="https://documends-essential.s3.eu-west-1.amazonaws.com/website+pictures/website1.png" alt="" style="width: 24px; max-width: 600px; height: auto; display: block;"></a></li>
+
+                            </ul>
+							
+		            	</div> -->
+                        
+		            	<table class="heading-section1" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+		            		<tr>
+                                <td width="100%" style="text-align: center;">
+                                    <p>Our app is currently available in Ireland.<br></p>
+									
+									<a target="_blank" href="https://play.google.com/store/apps"><img src="https://documends-essential.s3.eu-west-1.amazonaws.com/Playstore+png.png" alt=""  style="width: 36px; max-width: 50px; height: auto; margin: auto; display: inline-block;"></a>
+									<a target="_blank" href="https://apps.apple.com/in/app/dockket/id1581069556"><img src="https://documends-essential.s3.eu-west-1.amazonaws.com/pictures+given+by+developers/apple_logo1.png" alt=""  style="width: 39px; max-width: 50px; height: auto; margin-left: 20px; display: inline-block;"> </a> 
+                                </td>
+                    </tr>
+		            	</table>
+						
+						<div class="heading-section">
+							
+							<center>
+								<p><a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=helpdesk@dockket.com" style="color:#000;text-decoration: underline;">helpdesk@dockket.com</a>-<a target="_blank"  href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=helpdesk@dockket.com" target="_blank"><img src="https://documends-essential.s3.eu-west-1.amazonaws.com/website+pictures/mail.png" alt="" style="display: inline-block; text-align: center;
+									margin-left: 10px; width: 20px; max-width: 80px; height: auto;"></a><br>
+								  For more information, Visit website <a target="_blank" href="https://dockket.com/" style="text-decoration: underline;"> https://dockket.com/</a></p></center>
+								</div>
+		            </td>
+					
+		          </tr>
+				  <!-- end: tr -->
+		          
+		        </table>
+
+		      </td>
+		    </tr>
+			<!-- end:tr -->
+			
+      <!--END -->
+      </table>
+      
+
+    </div>
+  </center>
+</body>
+</html>

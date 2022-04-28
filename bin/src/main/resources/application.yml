@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: userjwttoken
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/documends
+    username: postgres
+    password: admin
+    initialization-mode: never
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+      temp:
+        use_jdbc_metadata_defaults: false
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+      database: jaysgala
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+      open-in-view: false
+      generate-ddl: false
+      properties.hibernate.temp.use_jdbc_metadata_defaults: false
+      id:
+       new_generator_mappings: false
+  mail:
+    default-encoding: UTF-8
+    host: mail.smtp2go.com
+    username: loganathanr@piraiinfo.com
+    password: Pirai@2021
+    port: 2525
+    protocol: smtp
+    test-connection: false
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  jackson:
+   serialization:    WRITE_DATES_AS_TIMESTAMPS: true
+   time-zone: UTC
+server:
+  port: 8085
+  compression:
+   enabled: true
+app:
+ jwtSecret: documendsSecretKey
+ jwtExpirationInMs: 604800000
+logging:
+ level:
+  org:
+  hibernate:
+   SQL: DEBUG
