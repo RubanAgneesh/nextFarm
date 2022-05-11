@@ -24,7 +24,7 @@ public class ClientMasterServiceImpl  implements ClientMasterService{
 	@Autowired
 	private ClientMasterRepository clientMasterRepository;
 	
-	
+	//Test
 	
 	@Override
 	public ApiResponse createClientMaster(@Valid ClientMasterRequest request) {
