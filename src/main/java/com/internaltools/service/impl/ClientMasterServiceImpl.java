@@ -41,6 +41,9 @@ public class ClientMasterServiceImpl  implements ClientMasterService{
 			}
 		ClientMaster clientMaster = new ClientMaster();
 		clientMaster.setClientName(request.getClientMasterModel().getClientName());
+		clientMaster.setIfscCode(request.getClientMasterModel().getIfscCode());
+		clientMaster.setGstIn(request.getClientMasterModel().getGstIn());
+		clientMaster.setPanNumber(request.getClientMasterModel().getPanNumber());
 		
 		clientMasterRepository.save(clientMaster);
 		}
