@@ -43,4 +43,4 @@ sudo chmod +x /usr/local/bin/docker-compose
 * `docker-compose up -d`
 
 ## Point the DNS to host IP.
-* ask customer to point DNS A record to IP of the host. ( if it is changed )
+* ask customer to point DNS A record to IP of the host. ( if it is changed ).
