@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class AWSS3Controller {
 
-//	@Autowired
+//	@Autowired ..
 //	JwtTokenProvider tokenProvider;
 //
 //	@Autowired

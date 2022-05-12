@@ -71,6 +71,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .exceptionHandling().authenticationEntryPoint(unauthorizedHandler)
             .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and().authorizeRequests().antMatchers("/api/clientmaster/**").permitAll()
+                .and().authorizeRequests().antMatchers("/api/company/**").permitAll()
 //			.antMatchers(
 //					"/api/s3service/uploadFile"
 //					,"/api/s3service/uploadProfileImage"
