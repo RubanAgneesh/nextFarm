@@ -39,10 +39,46 @@ public class ClientMasterServiceImpl  implements ClientMasterService{
 				response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 				return response;
 			}
+			
 		ClientMaster clientMaster = new ClientMaster();
+		
 		clientMaster.setClientName(request.getClientMasterModel().getClientName());
-		clientMaster.setIfscCode(request.getClientMasterModel().getIfscCode());
+		
+		clientMaster.setCompanyRegistrationNo(request.getClientMasterModel().getCompanyRegistrationNo());
+		
+		clientMaster.setWebsite(request.getClientMasterModel().getWebsite());
+		
+		clientMaster.setTelephone(request.getClientMasterModel().getTelephone());
+		
+	    clientMaster.setIndustry(request.getClientMasterModel().getIndustry());
+		
+		clientMaster.setClientAddress1(request.getClientMasterModel().getClientAddress1());
+		
+		clientMaster.setClientAddress2(request.getClientMasterModel().getClientAddress2());
+		
+		clientMaster.setClientCity(request.getClientMasterModel().getClientCity());
+		
+		clientMaster.setClientState(request.getClientMasterModel().getClientState());
+		
+		clientMaster.setClientCountry(request.getClientMasterModel().getClientCountry());
+		
+		clientMaster.setClientZipCode(request.getClientMasterModel().getClientZipCode());
+		
+		clientMaster.setClientCurrency(request.getClientMasterModel().getClientCurrency());
+		
 		clientMaster.setGstIn(request.getClientMasterModel().getGstIn());
+		
+		clientMaster.setServices(request.getClientMasterModel().getServices());
+		
+		clientMaster.setContactName(request.getClientMasterModel().getContactName());
+		
+		
+		clientMaster.setContactDesignation(request.getClientMasterModel().getContactDesignation());
+		
+		clientMaster.setContactEmail(request.getClientMasterModel().getContactEmail());
+		
+		clientMaster.setContactTelephone(request.getClientMasterModel().getContactTelephone());
+		
 		clientMaster.setPanNumber(request.getClientMasterModel().getPanNumber());
 		
 		clientMasterRepository.save(clientMaster);

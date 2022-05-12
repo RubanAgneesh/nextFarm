@@ -20,7 +20,7 @@ import io.swagger.annotations.Tag;
 import lombok.extern.slf4j.Slf4j;
 
 @Api(tags = { "ClientMaster Controller" })
-@SwaggerDefinition(tags = { @Tag(name = "Client details", description = "Clilent Details") })
+@SwaggerDefinition(tags = { @Tag(name = "Client details", description = "Client Details") })
 @RestController
 @RequestMapping("/api/clientmaster")
 @Slf4j

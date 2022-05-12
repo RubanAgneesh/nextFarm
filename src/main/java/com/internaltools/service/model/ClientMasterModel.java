@@ -14,7 +14,15 @@ public class ClientMasterModel {
 
 	private String clientName;
 	
-	private String clientAddress1;
+    private String companyRegistrationNo;
+	
+	private String website;
+	
+	private String telephone;
+	
+	private String industry;
+	
+    private String clientAddress1;
 	
 	private String clientAddress2;
 	
@@ -28,15 +36,9 @@ public class ClientMasterModel {
 	
 	private String clientCurrency;
 	
-	private String website;
+	private String gstIn;
 	
-	private String telephone;
-	
-	private String industry;
-	
-	private String address;
-
-	private String services;
+    private String services;
 
 	private String contactName;
 
@@ -46,22 +48,6 @@ public class ClientMasterModel {
 	
 	private String contactTelephone;
 	
-	private String gstIn;
-
-	private String panNumber;
-	
-	private String contactPhoneNumber;
-
-	private String companyRegistrationNo;
-	
-	private String bankName;
-	
-	private String branch; 
-	
-	private String ifscCode;
-	
-	private String accountType;
-	
-	private String accountNumber;
+    private String panNumber;
 
 }
