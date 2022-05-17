@@ -1,8 +1,9 @@
 package com.internaltools.controller;
 
+import com.internaltools.payload.request.BankRequest;
 import com.internaltools.payload.request.CompanyRequest;
 import com.internaltools.payload.response.ApiResponse;
-import com.internaltools.service.CompanyService;
+import com.internaltools.service.BankService;
 import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,21 +15,20 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @Api
-@SwaggerDefinition(tags ={ @Tag(name="Company details" , description = "Company Details")})
+@SwaggerDefinition(tags ={ @Tag(name="Bank details" , description = "Bank Details")})
 @RestController
-@RequestMapping("/api/company")
+@RequestMapping("/api/bank")
 @Slf4j
 
-public class CompanyController {
+public class BankController {
     @Autowired
-    private CompanyService companyService;
+    private BankService bankService;
 
-    @PostMapping("/createCompany")
-    @ApiOperation("Create Company")
+    @PostMapping("/createBank")
+    @ApiOperation("create Bank")
 
+    public ApiResponse createBank(@ApiParam(value = "The Request payload") @Valid @RequestBody BankRequest request) {
 
-        public ApiResponse createCompany(@ApiParam(value = "The Request payload") @Valid @RequestBody CompanyRequest request) {
-
-            return companyService.createCompany(request);
+        return bankService.createBank(request);
     }
 }
