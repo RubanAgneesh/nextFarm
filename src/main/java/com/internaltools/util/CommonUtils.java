@@ -166,9 +166,9 @@ public class CommonUtils {
 	}
 	
 	/**
-	 * @param dbDate
-	 * @return String
-	 */
+     * @param dbDate
+     * @return String
+     */
 	public static String convertDbTimestampToString(java.sql.Date dbDate) {
 		SimpleDateFormat dateTimeFormater = new SimpleDateFormat("dd-MM-yyyy HH:mm aa");
 		return dateTimeFormater.format(dbDate);

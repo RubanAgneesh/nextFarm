@@ -72,6 +72,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and().authorizeRequests().antMatchers("/api/clientmaster/**").permitAll()
                 .and().authorizeRequests().antMatchers("/api/company/**").permitAll()
+                .and().authorizeRequests().antMatchers("/api/country/**").permitAll()
 //			.antMatchers(
 //					"/api/s3service/uploadFile"
 //					,"/api/s3service/uploadProfileImage"
