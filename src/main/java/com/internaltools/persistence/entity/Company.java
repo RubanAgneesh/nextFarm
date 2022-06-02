@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+import java.lang.Long;
 import lombok.*;
 import org.hibernate.envers.Audited;
 
@@ -24,11 +24,11 @@ import javax.validation.constraints.NotBlank;
 
 
 public class Company {
-    private static final String serialVersionUID = "1";
+    private static final Long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private  String companyId;
+    private  Long companyId;
 
     private String companyCode;
 
@@ -44,7 +44,7 @@ public class Company {
 //   @NotBlank(message = "Pan Number is Required")
     private String panNumber;
 
-//    @NotBlank(message = "GSTIN is Required")
+//   @NotBlank(message = "GSTIN is Required")
     private String gstin;
 
     private String telephoneNumber;
@@ -60,10 +60,10 @@ public class Company {
 //    @NotBlank(message = "Address Details is Required")
     private String addressDetails;
 
-//    @NotBlank(message = "Contact Address Details is Required")
+//   @NotBlank(message = "Contact Address Details is Required")
     private String contactAddressDetails;
 
-//    @NotBlank(message = "Invoice Prefix is Required")
+//   @NotBlank(message = "Invoice Prefix is Required")
     private String invoicePrefix;
 
 }

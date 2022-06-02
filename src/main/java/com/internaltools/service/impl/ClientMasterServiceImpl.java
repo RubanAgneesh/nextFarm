@@ -18,19 +18,18 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
 public class ClientMasterServiceImpl  implements ClientMasterService{
-	@Autowired
-	private UserRepository userRepository;
-	
+	@Autowired	private UserRepository userRepository;
+
 	@Autowired
 	private ClientMasterRepository clientMasterRepository;
-	
+
 	//Test
-	
+
 	@Override
 	public ApiResponse createClientMaster(@Valid ClientMasterRequest request) {
 		ApiResponse response = new ApiResponse();
-		
-		
+
+
 		try
 		{
 			if (null == request.getClientMasterModel().getClientName()) {
@@ -41,7 +40,7 @@ public class ClientMasterServiceImpl  implements ClientMasterService{
 			}
 		ClientMaster clientMaster = new ClientMaster();
 		clientMaster.setClientName(request.getClientMasterModel().getClientName());
-		
+
 		clientMasterRepository.save(clientMaster);
 		}
 		catch(Exception e) {
@@ -50,14 +49,14 @@ public class ClientMasterServiceImpl  implements ClientMasterService{
 			response.setMessage("Failure");
 			response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 			return response;
-			
+
 		}
-	
+
 		response.setStatus(true);
 		response.setMessage("Success");
 		response.setStatusCode(ErrorConstants.ERROR_CODE_200);
 		return response;
-		
+
 	}
 
 }

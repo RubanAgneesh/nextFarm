@@ -75,6 +75,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().authorizeRequests().antMatchers("/api/bank/**").permitAll()
                 .and().authorizeRequests().antMatchers("/api/address/**").permitAll()
                 .and().authorizeRequests().antMatchers("/api/billaddress/**").permitAll()
+                .and().authorizeRequests().antMatchers("/api/invoice/**").permitAll()
+                .and().authorizeRequests().antMatchers("/api/company/getByCompanyId/**").permitAll()
 //			.antMatchers(
 //					"/api/s3service/uploadFile"
 //					,"/api/s3service/uploadProfileImage"
