@@ -38,7 +38,9 @@ public class ClientMasterServiceImpl  implements ClientMasterService{
 				response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 				return response;
 			}
+			
 		ClientMaster clientMaster = new ClientMaster();
+		
 		clientMaster.setClientName(request.getClientMasterModel().getClientName());
 
 		clientMasterRepository.save(clientMaster);

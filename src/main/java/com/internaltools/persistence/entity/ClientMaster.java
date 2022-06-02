@@ -26,11 +26,12 @@ public class ClientMaster {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	private String clientCode;
     
 	private String clientName;
 	
-	private String clientAddress;
+    private String companyRegistrationNo;
 	
 	private String website;
 	
@@ -38,9 +39,23 @@ public class ClientMaster {
 	
 	private String industry;
 	
-	private String address;
-
-	private String services;
+    private String clientAddress1;
+	
+	private String clientAddress2;
+	
+	private String clientCity;
+	
+	private String clientState;
+	
+	private String clientCountry;
+	
+	private String clientZipCode;
+	
+	private String clientCurrency;
+	
+	private String gstIn;
+	
+    private String services;
 
 	private String contactName;
 
@@ -50,22 +65,5 @@ public class ClientMaster {
 	
 	private String contactTelephone;
 	
-	private String gstIn;
-
-	private String panNumber;
-	
-	private String contactPhoneNumber;
-
-	private String companyRegistrationNo;
-	
-	private String bankName;
-	
-	private String branch; 
-	
-	private String ifscCode;
-	
-	private String accountType;
-	
-	private String accountNumber;
-
+    private String panNumber;
 }
