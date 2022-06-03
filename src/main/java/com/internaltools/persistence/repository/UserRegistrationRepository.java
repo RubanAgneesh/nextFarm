@@ -22,7 +22,7 @@ public interface UserRegistrationRepository extends JpaRepository<UserRegistrati
 	 * @param mobileNumber
 	 * @return Optional<UserRegistration>
 	 */
-	Optional<UserRegistration> findByOtpAndOtpValidAndUserEmail(Integer otp, boolean otpValid,String email);
+	Optional<UserRegistration> findByOtpAndOtpValidAndUserUserName(Integer otp, boolean otpValid,String email);
 
 	/**
 	 * @param id

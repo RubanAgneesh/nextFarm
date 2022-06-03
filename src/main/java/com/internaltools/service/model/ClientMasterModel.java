@@ -1,5 +1,6 @@
 package com.internaltools.service.model;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,11 +31,13 @@ public class ClientMasterModel {
 	
 	private String clientState;
 	
-	private String clientCountry;
+	//private String clientCountry;
+	
+	//private CountryModel country;
 	
 	private String clientZipCode;
 	
-	private String clientCurrency;
+	//private String clientCurrency;
 	
 	private String gstIn;
 	
@@ -49,5 +52,7 @@ public class ClientMasterModel {
 	private String contactTelephone;
 	
     private String panNumber;
+    
+    private CompanyModel company;
 
 }

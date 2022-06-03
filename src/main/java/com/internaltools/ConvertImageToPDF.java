@@ -2,14 +2,9 @@ package com.internaltools;
 
 import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
-import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.Date;
-
-import com.internaltools.util.CommonUtils;
 
 public class ConvertImageToPDF {
 
@@ -17,9 +12,9 @@ public class ConvertImageToPDF {
         
     	//String zoneDate = CommonUtils.convertZoneIdToLocalDateString("Europe/Dublin");
     	
-    	LocalDate zoneDate = CommonUtils.convertZoneIdToLocalDate("Europe/Dublin");
-		Timestamp zoneTimestamp = Timestamp.valueOf(zoneDate.atTime(LocalTime.MIDNIGHT));
-		System.out.println("Before transaction :: zoneTimestamp :: " + zoneTimestamp);
+//    	LocalDate zoneDate = CommonUtils.convertZoneIdToLocalDate("Europe/Dublin");
+//		Timestamp zoneTimestamp = Timestamp.valueOf(zoneDate.atTime(LocalTime.MIDNIGHT));
+//		System.out.println("Before transaction :: zoneTimestamp :: " + zoneTimestamp);
 		
     }
     
