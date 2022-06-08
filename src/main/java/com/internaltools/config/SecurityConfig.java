@@ -70,7 +70,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().and().csrf().disable()
             .exceptionHandling().authenticationEntryPoint(unauthorizedHandler)
             .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-            .and().authorizeRequests().antMatchers("/api/clientmaster/**").permitAll()
+            .and().authorizeRequests().antMatchers("/api/client/**").permitAll()
+                .and().authorizeRequests().antMatchers("/api/company/**").permitAll()
+
+                .and().authorizeRequests().antMatchers("/api/bank/**").permitAll()
+                .and().authorizeRequests().antMatchers("/api/address/**").permitAll()
+                .and().authorizeRequests().antMatchers("/api/billaddress/**").permitAll()
+                .and().authorizeRequests().antMatchers("/api/invoice/**").permitAll()
+                .and().authorizeRequests().antMatchers("/api/company/getByCompanyId/**").permitAll()
+                .and().authorizeRequests().antMatchers("/api/country/**").permitAll()
+                .and().authorizeRequests().antMatchers("/api/tax/**").permitAll()
+                .and().authorizeRequests().antMatchers("/api/tax/getByTaxId/**").permitAll()
+
 //			.antMatchers(
 //					"/api/s3service/uploadFile"
 //					,"/api/s3service/uploadProfileImage"

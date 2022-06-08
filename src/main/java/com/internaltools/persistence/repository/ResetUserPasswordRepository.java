@@ -16,7 +16,7 @@ public interface ResetUserPasswordRepository extends JpaRepository<ResetUserPass
 	 * @param mobileNumber
 	 * @return Optional<ResetUserPassword>
 	 */
-	Optional<ResetUserPassword> findByOtpAndOtpValidAndUserEmail(Integer otp, boolean otpValid,String email);
+	Optional<ResetUserPassword> findByOtpAndOtpValidAndUserUserName(Integer otp, boolean otpValid,String email);
 
 	/**
 	 * @param userId

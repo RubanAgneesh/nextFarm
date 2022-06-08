@@ -20,16 +20,16 @@ import io.swagger.annotations.Tag;
 import lombok.extern.slf4j.Slf4j;
 
 @Api(tags = { "ClientMaster Controller" })
-@SwaggerDefinition(tags = { @Tag(name = "Client details", description = "Clilent Details") })
+@SwaggerDefinition(tags = { @Tag(name = "Client details", description = "Client Details") })
 @RestController
-@RequestMapping("/api/clientmaster")
+@RequestMapping("/api/client")
 @Slf4j
 public class ClientMasterController {
 	@Autowired
 	private ClientMasterService clientMasterService;
 	
-	@PostMapping("/createClientMaster")
-	@ApiOperation("Create ClientMaster")
+	@PostMapping("/createClient")
+	@ApiOperation("Create Client")
 	public ApiResponse createClientMaster(@ApiParam(value = "The Request payload") @Valid @RequestBody ClientMasterRequest request) {
 	
 		return clientMasterService.createClientMaster(request);

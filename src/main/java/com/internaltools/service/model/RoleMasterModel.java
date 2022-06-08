@@ -9,15 +9,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class RoleMasterModel {
 	
-	private Long id;
+	private Long roleId;
 	
 	private String roleName;
 
 	private String description;
-	
-	private boolean hidden;
-	
-	private Long userId;
 	
 	private boolean active;
 	

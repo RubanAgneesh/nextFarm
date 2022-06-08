@@ -11,7 +11,7 @@ import com.internaltools.persistence.entity.ClientMaster;
  */
 @Repository
 
-public interface ClientMasterRepository extends JpaRepository<ClientMaster, String> {
+public interface ClientMasterRepository extends JpaRepository<ClientMaster, Long> {
 	
 		
 }
