@@ -55,9 +55,24 @@ public class Address {
   @NotBlank(message = "Phone Number is Required")
     private String phoneNumber;
 
-//    private Boolean isBilling;
+  //  @ManyToOne(fetch = FetchType.LAZY, optional = true)
+//  @JoinColumn(name = "COMPANY_COMPANY_CODE", referencedColumnName = "companyCode")
+//  private  Company company;
 
-  @ManyToOne(fetch = FetchType.LAZY, optional = true)
-  @JoinColumn(name = "COMPANY_COMPANY_CODE", referencedColumnName = "companyCode")
-  private  Company company;
+
+  // Address Details
+
+//  private  String addressLine1;
+//
+//  private String addressLine2;
+//
+//  private String city;
+
+//  private String state;
+//
+//  private String zipCode;
+  private String country;
+
+  private Boolean isBilling;
+
 }

@@ -15,5 +15,6 @@ public class CompanyResponse extends ApiResponse{
     private static final long serialVersionUID = 1;
 
     private CompanyModel companyModel;
+
     private long companyId;
 }

@@ -12,12 +12,9 @@ import com.internaltools.util.ErrorConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
@@ -45,25 +42,11 @@ public class CompanyServiceImpl implements CompanyService {
                 response.setStatusCode(ErrorConstants.ERROR_CODE_401);
                 return response;
             }
-//            else if (null == request.getCompanyModel().getCompanyCode()) {
-//                response.setMessage("Company Code is mandatory");
-//                Random rnd = new Random();
-//                int number = rnd.nextInt(999);
-//                response.setStatus(Boolean.FALSE);
-//                response.setStatusCode(ErrorConstants.ERROR_CODE_401);
-//               return String.format("%06d", number);
-//
-//                return response;
-//            }
             Company company = new Company();
 
             company.setCompanyName(request.getCompanyModel().getCompanyName());
 
-//            company.setCompanyCode("PIR"+ Math.random());
-//            company.setCompanyCode("PIR"+ Math.random()*(max-min+1)+min);
             company.setCompanyCode("PIR" + rand_int1);
-//                return ("PIR"+ Math.random());
-//                ("PIR"+ Math.random());
 
             company.setWebsite(request.getCompanyModel().getWebsite());
 
@@ -81,14 +64,57 @@ public class CompanyServiceImpl implements CompanyService {
 
             company.setBankDetails(request.getCompanyModel().getBankDetails());
 
-            company.setAddressDetails(request.getCompanyModel().getAddressDetails());
-
-            company.setContactAddressDetails(request.getCompanyModel().getContactAddressDetails());
-
             company.setInvoicePrefix(request.getCompanyModel().getInvoicePrefix());
-            companyRepository.save(company);
+
+            company.setBankName(request.getCompanyModel().getBankName());
+
+            company.setIfscCode(request.getCompanyModel().getIfscCode());
+
+            company.setBranchName(request.getCompanyModel().getBranchName());
+
+            company.setAccountHolderName(request.getCompanyModel().getAccountHolderName());
+
+            company.setAccountNumber(request.getCompanyModel().getAccountNumber());
+
+             company.setReenterAccountNumber(request.getCompanyModel().getReenterAccountNumber());
+
+             company.setSwiftCode(request.getCompanyModel().getSwiftCode());
+
+             company.setContactAddress1(request.getCompanyModel().getContactAddress1());
+
+             company.setContactAddress2(request.getCompanyModel().getContactAddress2());
+
+             company.setContactCountry(request.getCompanyModel().getContactCountry());
+
+             company.setContactCity(request.getCompanyModel().getContactCity());
+
+             company.setContactState(request.getCompanyModel().getContactState()); ;
+
+             company.setContactZipCode(request.getCompanyModel().getContactZipCode());
+
+             company.setContactName(request.getCompanyModel().getContactName());
+
+             company.setContactDesignation(request.getCompanyModel().getContactDesignation());
+
+             company.setContactEmailId(request.getCompanyModel().getContactEmailId());
+
+             company.setContactPhoneNumber(request.getCompanyModel().getContactPhoneNumber());
+
+             company.setCompanyAddress1(request.getCompanyModel().getCompanyAddress1());
+
+             company.setCompanyAddress2(request.getCompanyModel().getCompanyAddress2());
+
+             company.setCompanyCity(request.getCompanyModel().getCompanyCity());
+
+             company.setCompanyCountry(request.getCompanyModel().getCompanyCountry());
+
+             company.setCompanyState(request.getCompanyModel().getCompanyState());
+
+             company.setCompanyZipCode(request.getCompanyModel().getCompanyZipCode());
+
+             companyRepository.save(company);
         } catch (Exception e) {
-            log.error("Exception in transferFromManualTransaction ::" + e.getMessage());
+            log.error("Exception in Company ::" + e.getMessage());
             response.setStatus(false);
             response.setMessage("Failure");
             response.setStatusCode(ErrorConstants.ERROR_CODE_401);

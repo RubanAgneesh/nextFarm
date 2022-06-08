@@ -37,6 +37,6 @@ public class BillAddress {
     private Boolean isBilling;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
-    @JoinColumn(name = "COMPANY_COMPANY_CODE", referencedColumnName = "companyCode")
+    @JoinColumn(name = "COMPANY_ID", referencedColumnName = "companyId")
     private  Company company;
 }
