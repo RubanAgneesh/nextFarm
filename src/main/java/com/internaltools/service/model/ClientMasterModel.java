@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 
 public class ClientMasterModel {
 	
-	private String clientCode;
+	private Long clientCode;
 
 	private String clientName;
 	
@@ -27,17 +27,13 @@ public class ClientMasterModel {
 	
 	private String clientAddress2;
 	
+	private CountryModel country;
+	
 	private String clientCity;
 	
 	private String clientState;
 	
-	//private String clientCountry;
-	
-	//private CountryModel country;
-	
 	private String clientZipCode;
-	
-	//private String clientCurrency;
 	
 	private String gstIn;
 	
@@ -54,5 +50,11 @@ public class ClientMasterModel {
     private String panNumber;
     
     private CompanyModel company;
+    
+    private Long companyId;
+    
+    private Long countryId;
+    
+    
 
 }

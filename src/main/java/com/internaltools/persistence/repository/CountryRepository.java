@@ -11,7 +11,7 @@ import java.util.Optional;
 
 
 @Repository
-public interface CountryRepository extends JpaRepository<Country, String> {
+public interface CountryRepository extends JpaRepository<Country, Long> {
 
     /**
      *

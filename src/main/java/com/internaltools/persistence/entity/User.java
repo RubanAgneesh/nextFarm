@@ -1,9 +1,12 @@
 package com.internaltools.persistence.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -33,17 +36,22 @@ public class User { //extends DateAudit {
 	@NotNull
 	private String email;
 	
+	@NotNull
 	@Size(max = 50)
 	private String password;
 	
 	
-	@NotNull
-	private int roleId;
+	@ManyToOne(fetch = FetchType.LAZY, optional = true)
+	@JoinColumn(name = "ROLE_ID", referencedColumnName = "roleId")
+	private Company roleMaster;
+
+	
+	@ManyToOne(fetch = FetchType.LAZY, optional = true)
+	@JoinColumn(name = "COMPANY_ID", referencedColumnName = "companyId")
+	private Company company;
 	
 	@NotNull
-	private String companyCode;
-	
-	//private String empId;
+	private String userName;
 	
 	private String token;
 	

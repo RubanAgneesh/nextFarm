@@ -16,7 +16,7 @@ public class UserCreateModel {
 	
 	private int roleId;
 	
-	private String companyCode;
+	private Long companyId;
 	
 	private String token;
 	

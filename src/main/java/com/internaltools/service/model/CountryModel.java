@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 
 public class CountryModel {
 
-    private String countryId;
+    private Long countryId;
 
     private String countryName;
 

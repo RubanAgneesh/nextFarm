@@ -1,19 +1,21 @@
 package com.internaltools.persistence.entity;
 
+import java.sql.Timestamp;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.envers.Audited;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.envers.Audited;
-
-import java.sql.Date;
-import java.sql.Timestamp;
 
 
 @Entity
@@ -26,12 +28,12 @@ import java.sql.Timestamp;
 
 public class Country {
 
-    private static final String serialVersionUID = "1";
+    private static final Long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private String countryId;
+	private Long countryId;
 
     private String countryName;
 

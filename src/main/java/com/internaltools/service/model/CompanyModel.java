@@ -12,7 +12,11 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 
+
 public class CompanyModel {
+	
+	private  Long companyId;
+	
     private String companyName;
 
     private String companyCode;
