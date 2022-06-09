@@ -1,5 +1,7 @@
 package com.internaltools.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -8,12 +10,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.internaltools.util.ErrorConstants;
+
+import ch.qos.logback.core.net.server.Client;
+
 import com.internaltools.payload.request.ClientMasterRequest;
 import com.internaltools.payload.response.ApiResponse;
 import com.internaltools.persistence.repository.ClientMasterRepository;
 import com.internaltools.persistence.repository.CompanyRepository;
 import com.internaltools.persistence.repository.CountryRepository;
 import com.internaltools.service.ClientMasterService;
+import com.internaltools.service.model.ClientMasterModel;
+import com.internaltools.service.model.CompanyModel;
 import com.internaltools.persistence.entity.ClientMaster;
 import com.internaltools.persistence.entity.Company;
 import com.internaltools.persistence.entity.Country;
@@ -229,5 +236,21 @@ public class ClientMasterServiceImpl implements ClientMasterService {
 		return response;
 
 	}
+	@Override
+	public List<ClientMasterModel> getClientList() {
+		// Fetch all the clients from DB through repository
+		List<ClientMaster> clientMasterList = clientMasterRepository.findAll();
+		List<ClientMasterModel> clientModelList = new ArrayList<>();
 
+		for (ClientMaster client : clientMasterList) {
+			ClientMasterModel clientMasterModel = new ClientMasterModel();
+			clientMasterModel.setClientName(client.getClientName());
+			clientMasterModel.setClientCity(client.getClientCity());
+			clientMasterModel.setClientState(client.getClientState());
+			clientModelList.add(clientMasterModel);
+				
+		}
+
+		return clientModelList;
+	}
 }

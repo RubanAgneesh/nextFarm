@@ -7,7 +7,7 @@ spring:
     name: Internaltools
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/internaltools
+    url: jdbc:postgresql://localhost:5433/internaltools
     username: postgres
     password: postgres
     initialization-mode: never

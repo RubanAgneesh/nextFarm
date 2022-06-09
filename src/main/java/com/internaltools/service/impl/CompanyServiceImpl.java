@@ -118,5 +118,22 @@ public class CompanyServiceImpl implements CompanyService {
             response.setStatusCode(ErrorConstants.ERROR_CODE_200);
             return response;
     }
+    @Override
+	public List<CompanyModel> getCompanyList() {
+		// Fetch all the companies from DB through repository
+		List<Company> companyList = companyRepository.findAll();
+		List<CompanyModel> companyModelList = new ArrayList<>();
+
+		for (Company company : companyList) {
+			CompanyModel companyModel = new CompanyModel();
+			companyModel.setCompanyName(company.getCompanyName());
+			companyModel.setAddressDetails(company.getAddressDetails());
+			companyModel.setContactAddressDetails(company.getContactAddressDetails());
+			companyModelList.add(companyModel);
+		}
+
+		return companyModelList;
+	}
+
 
 }
