@@ -43,7 +43,7 @@ public class User { //extends DateAudit {
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = true)
 	@JoinColumn(name = "ROLE_ID", referencedColumnName = "roleId")
-	private Company roleMaster;
+	private RoleMaster roleMaster;
 
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = true)
