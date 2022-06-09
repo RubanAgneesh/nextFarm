@@ -78,6 +78,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().authorizeRequests().antMatchers("/api/billaddress/**").permitAll()
                 .and().authorizeRequests().antMatchers("/api/invoice/**").permitAll()
                 .and().authorizeRequests().antMatchers("/api/company/getByCompanyId/**").permitAll()
+                .and().authorizeRequests().antMatchers("/api/company/**").permitAll()
+
                 .and().authorizeRequests().antMatchers("/api/country/**").permitAll()
                 .and().authorizeRequests().antMatchers("/api/tax/**").permitAll()
                 .and().authorizeRequests().antMatchers("/api/tax/getByTaxId/**").permitAll()
