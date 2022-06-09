@@ -27,7 +27,7 @@ public class RoleMaster {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long roleId;
 	
 	private String roleName;
 
@@ -35,10 +35,5 @@ public class RoleMaster {
 	
 	private boolean active;
 	
-	private boolean hidden;
-	
-	@ManyToOne(fetch = FetchType.LAZY, optional = true)
-	@JoinColumn(name = "USER_ID", referencedColumnName = "id")
-	private User user;
 	
 }

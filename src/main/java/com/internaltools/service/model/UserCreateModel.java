@@ -7,14 +7,21 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RoleMasterModel {
-	
-	private Long roleId;
-	
-	private String roleName;
 
-	private String description;
+public class UserCreateModel {
 	
-	private boolean active;
+	private String email;
+
+	private String password;
 	
+	private int roleId;
+	
+	private Long companyId;
+	
+	private String token;
+	
+	private Boolean active;
+	
+	
+
 }

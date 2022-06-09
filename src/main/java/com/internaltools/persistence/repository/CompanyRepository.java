@@ -1,12 +1,12 @@
 package com.internaltools.persistence.repository;
 
-import com.internaltools.persistence.entity.Company;
-import com.stripe.model.Account;
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-import java.util.Optional;
+import com.internaltools.persistence.entity.Company;
+import com.internaltools.persistence.entity.Country;
 
 /**
  * @author Ruban
@@ -23,5 +23,7 @@ public interface CompanyRepository extends JpaRepository<Company,Long > {
 
     Optional<Company> findByCompanyId(Long companyId);
 
+	//static Optional<Country> findById(Long countryId);
+	
 
 }

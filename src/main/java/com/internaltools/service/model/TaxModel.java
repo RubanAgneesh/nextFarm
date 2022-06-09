@@ -7,14 +7,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RoleMasterModel {
-	
-	private Long roleId;
-	
-	private String roleName;
 
-	private String description;
-	
-	private boolean active;
-	
+public class TaxModel {
+
+    private Long taxId;
+
+    private String taxType;
+
+    private String taxPercentage;
+
+    private Boolean taxStatus;
 }

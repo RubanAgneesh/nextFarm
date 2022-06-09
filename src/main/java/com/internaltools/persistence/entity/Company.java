@@ -9,7 +9,12 @@ import java.lang.Long;
 import lombok.*;
 import org.hibernate.envers.Audited;
 
+
 import javax.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data

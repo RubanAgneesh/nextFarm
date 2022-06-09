@@ -10,7 +10,11 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 @AllArgsConstructor
 
+
 public class CompanyModel {
+	
+	private  Long companyId;
+	
     private String companyName;
 
     private String companyCode;
