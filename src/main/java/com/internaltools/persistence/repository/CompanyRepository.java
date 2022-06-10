@@ -21,7 +21,6 @@ public interface CompanyRepository extends JpaRepository<Company,Long > {
      * @return
      */
 
-
     Optional<Company> findByCompanyId(Long companyId);
 
 	//static Optional<Country> findById(Long countryId);

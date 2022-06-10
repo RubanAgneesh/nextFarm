@@ -23,7 +23,7 @@ spring:
       temp:
         use_jdbc_metadata_defaults: false
     hibernate:
-      ddl-auto: create
+      ddl-auto: createl
       show-sql: true
       database: internaltools
       database-platform: org.hibernate.dialect.PostgreSQLDialect

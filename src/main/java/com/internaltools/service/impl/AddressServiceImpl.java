@@ -46,6 +46,7 @@ public class AddressServiceImpl implements AddressService {
             adr.setContactDesignation(request.getAddressModel().getContactDesignation());
             adr.setEmailId(request.getAddressModel().getEmailId());
             adr.setPhoneNumber(request.getAddressModel().getPhoneNumber());
+            adr.setCountry(request.getAddressModel().getCounty());
 //            adr.setIsBilling(request.getAddressModel().getIsBilling());
             addressRepository.save(adr);
 

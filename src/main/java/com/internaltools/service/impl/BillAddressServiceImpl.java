@@ -35,6 +35,7 @@ public class BillAddressServiceImpl implements BillAddressService {
                 return response;
             }
             BillAddress ba = new BillAddress();
+
             ba.setAddressLine1(request.getBillAddressModel().getAddressLine1());
 
             ba.setAddressLine2(request.getBillAddressModel().getAddressLine2());

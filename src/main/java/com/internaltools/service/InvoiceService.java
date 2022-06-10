@@ -4,7 +4,6 @@ import com.internaltools.payload.request.CompanyRequest;
 import com.internaltools.payload.request.InvoiceRequest;
 import com.internaltools.payload.response.ApiResponse;
 import com.internaltools.payload.response.CompanyResponse;
-import com.internaltools.payload.response.InvoiceResponse;
 
 import javax.validation.Valid;
 
@@ -27,4 +26,10 @@ public interface InvoiceService {
 //    CompanyResponse getCompanyId(Long id);
 
     ApiResponse createInvoice(@Valid InvoiceRequest request);
+
+    /**
+     * @param invoiceRequest
+     * @return
+     */
+    CompanyResponse getInvoiceList(@Valid CompanyRequest invoiceRequest);
 }

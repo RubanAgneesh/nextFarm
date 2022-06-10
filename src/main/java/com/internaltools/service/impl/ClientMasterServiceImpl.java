@@ -52,121 +52,119 @@ public class ClientMasterServiceImpl implements ClientMasterService {
 				response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 				return response;
 			}
-			
+
 			if (null == request.getClientMasterModel().getCompanyRegistrationNo()) {
 				response.setMessage("Company Registration Number is mandatory");
 				response.setStatus(Boolean.FALSE);
 				response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 				return response;
 			}
-			
+
 			if (null == request.getClientMasterModel().getWebsite()) {
 				response.setMessage("Website is mandatory");
 				response.setStatus(Boolean.FALSE);
 				response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 				return response;
 			}
-			
+
 			if (null == request.getClientMasterModel().getTelephone()) {
 				response.setMessage("Telephone Number is mandatory");
 				response.setStatus(Boolean.FALSE);
 				response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 				return response;
 			}
-			
+
 			if (null == request.getClientMasterModel().getIndustry()) {
 				response.setMessage("Industry is mandatory");
 				response.setStatus(Boolean.FALSE);
 				response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 				return response;
 			}
-			
+
 			if (null == request.getClientMasterModel().getClientAddress1()) {
 				response.setMessage("Address1 is mandatory");
 				response.setStatus(Boolean.FALSE);
 				response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 				return response;
 			}
-			
+
 			if (null == request.getClientMasterModel().getClientAddress2()) {
 				response.setMessage("Address2 is mandatory");
 				response.setStatus(Boolean.FALSE);
 				response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 				return response;
 			}
-			
+
 			if (null == request.getClientMasterModel().getClientCity()) {
 				response.setMessage("Client City is mandatory");
 				response.setStatus(Boolean.FALSE);
 				response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 				return response;
 			}
-			
+
 			if (null == request.getClientMasterModel().getClientState()) {
 				response.setMessage("Client State is mandatory");
 				response.setStatus(Boolean.FALSE);
 				response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 				return response;
 			}
-			
+
 			if (null == request.getClientMasterModel().getClientZipCode()) {
 				response.setMessage("ZipCode is mandatory");
 				response.setStatus(Boolean.FALSE);
 				response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 				return response;
 			}
-			
+
 			if (null == request.getClientMasterModel().getGstIn()) {
 				response.setMessage("Gst is mandatory");
 				response.setStatus(Boolean.FALSE);
 				response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 				return response;
 			}
-			
+
 			if (null == request.getClientMasterModel().getServices()) {
 				response.setMessage("Service is mandatory");
 				response.setStatus(Boolean.FALSE);
 				response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 				return response;
 			}
-			
+
 			if (null == request.getClientMasterModel().getContactName()) {
 				response.setMessage("ContactName is mandatory");
 				response.setStatus(Boolean.FALSE);
 				response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 				return response;
 			}
-			
+
 			if (null == request.getClientMasterModel().getContactDesignation()) {
 				response.setMessage("Designation is mandatory");
 				response.setStatus(Boolean.FALSE);
 				response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 				return response;
 			}
-			
+
 			if (null == request.getClientMasterModel().getContactEmail()) {
 				response.setMessage("Contact Email is mandatory");
 				response.setStatus(Boolean.FALSE);
 				response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 				return response;
 			}
-			
-			
+
 			if (null == request.getClientMasterModel().getContactTelephone()) {
 				response.setMessage("Contact TelephoneNo is mandatory");
 				response.setStatus(Boolean.FALSE);
 				response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 				return response;
 			}
-			
-			
+
 			if (null == request.getClientMasterModel().getPanNumber()) {
 				response.setMessage("Pan Number is mandatory");
 				response.setStatus(Boolean.FALSE);
 				response.setStatusCode(ErrorConstants.ERROR_CODE_401);
 				return response;
 			}
-			
+
 			ClientMaster clientMaster = new ClientMaster();
 
 			clientMaster.setClientName(request.getClientMasterModel().getClientName());
@@ -236,6 +234,7 @@ public class ClientMasterServiceImpl implements ClientMasterService {
 		return response;
 
 	}
+
 	@Override
 	public List<ClientMasterModel> getClientList() {
 		// Fetch all the clients from DB through repository
@@ -245,10 +244,25 @@ public class ClientMasterServiceImpl implements ClientMasterService {
 		for (ClientMaster client : clientMasterList) {
 			ClientMasterModel clientMasterModel = new ClientMasterModel();
 			clientMasterModel.setClientName(client.getClientName());
+			//clientMasterModel.setClientCode(client.getClientCode());
+			clientMasterModel.setCompanyRegistrationNo(client.getCompanyRegistrationNo());
+			clientMasterModel.setWebsite(client.getWebsite());
+			clientMasterModel.setTelephone(client.getTelephone());
+			clientMasterModel.setIndustry(client.getIndustry());
+			clientMasterModel.setClientAddress1(client.getClientAddress1());
+			clientMasterModel.setClientAddress2(client.getClientAddress2());
 			clientMasterModel.setClientCity(client.getClientCity());
 			clientMasterModel.setClientState(client.getClientState());
+			clientMasterModel.setClientZipCode(client.getClientZipCode());
+			clientMasterModel.setGstIn(client.getGstIn());
+			clientMasterModel.setServices(client.getServices());
+			clientMasterModel.setContactName(client.getContactName());
+			clientMasterModel.setContactDesignation(client.getContactDesignation());
+			clientMasterModel.setContactEmail(client.getContactEmail());
+			clientMasterModel.setContactTelephone(client.getContactTelephone());
+			clientMasterModel.setPanNumber(client.getPanNumber());
 			clientModelList.add(clientMasterModel);
-				
+
 		}
 
 		return clientModelList;
