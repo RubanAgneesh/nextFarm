@@ -26,65 +26,54 @@ import com.internaltools.security.JwtAuthenticationEntryPoint;
 import com.internaltools.security.JwtAuthenticationFilter;
 import com.internaltools.service.impl.CustomUserDetailsServiceImpl;
 
-
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(
-        securedEnabled = true,
-        jsr250Enabled = true,
-        prePostEnabled = true
-)
+@EnableGlobalMethodSecurity(securedEnabled = true, jsr250Enabled = true, prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private JwtAuthenticationEntryPoint unauthorizedHandler;
-    
-    @Autowired
-    CustomUserDetailsServiceImpl customUserDetailsService;
+	@Autowired
+	private JwtAuthenticationEntryPoint unauthorizedHandler;
 
-    @Bean
-    public JwtAuthenticationFilter jwtAuthenticationFilter() {
-        return new JwtAuthenticationFilter();
-    }
+	@Autowired
+	CustomUserDetailsServiceImpl customUserDetailsService;
 
-    @Override
-    public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-        authenticationManagerBuilder
-                .userDetailsService(customUserDetailsService)
-                .passwordEncoder(passwordEncoder());
-    }
+	@Bean
+	public JwtAuthenticationFilter jwtAuthenticationFilter() {
+		return new JwtAuthenticationFilter();
+	}
 
-    @Bean(BeanIds.AUTHENTICATION_MANAGER)
-    @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
-    }
+	@Override
+	public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
+		authenticationManagerBuilder.userDetailsService(customUserDetailsService).passwordEncoder(passwordEncoder());
+	}
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+	@Bean(BeanIds.AUTHENTICATION_MANAGER)
+	@Override
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+		return super.authenticationManagerBean();
+	}
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.cors().and().csrf().disable()
-            .exceptionHandling().authenticationEntryPoint(unauthorizedHandler)
-            .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-            .and().authorizeRequests().antMatchers("/api/client/**").permitAll()
-                .and().authorizeRequests().antMatchers("/api/company/**").permitAll()
-                .and().authorizeRequests().antMatchers("/api/bank/**").permitAll()
-                .and().authorizeRequests().antMatchers("/api/address/**").permitAll()
-                .and().authorizeRequests().antMatchers("/api/billaddress/**").permitAll()
-                .and().authorizeRequests().antMatchers("/api/invoice/**").permitAll()
-                .and().authorizeRequests().antMatchers("/api/company/getByCompanyId/**").permitAll()
-                .and().authorizeRequests().antMatchers("/api/company/companies/**").permitAll()
-                .and().authorizeRequests().antMatchers("/api/company/**").permitAll()
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 
-                .and().authorizeRequests().antMatchers("/api/country/**").permitAll()
-                .and().authorizeRequests().antMatchers("/api/tax/**").permitAll()
-                .and().authorizeRequests().antMatchers("/api/tax/getByTaxId/**").permitAll()
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
+				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
+				.antMatchers("/api/client/**").permitAll().and().authorizeRequests().antMatchers("/api/company/**")
+				.permitAll().and().authorizeRequests().antMatchers("/api/bank/**").permitAll().and().authorizeRequests()
+				.antMatchers("/api/address/**").permitAll().and().authorizeRequests().antMatchers("/api/billaddress/**")
+				.permitAll().and().authorizeRequests().antMatchers("/api/invoice/**").permitAll().and()
+				.authorizeRequests().antMatchers("/api/company/getByCompanyId/**").permitAll().and().authorizeRequests()
+				.antMatchers("/api/company/companies/**").permitAll().and().authorizeRequests()
+				.antMatchers("/api/company/**").permitAll().and().authorizeRequests()
+				.antMatchers("/api/client/clients/**").permitAll().and().authorizeRequests()
+				.antMatchers("/api/country/**").permitAll().and().authorizeRequests().antMatchers("/api/tax/**")
+				.permitAll().and().authorizeRequests().antMatchers("/api/tax/getByTaxId/**").permitAll()
 
-                .and().authorizeRequests().antMatchers("/api/company/**").permitAll()
+				.and().authorizeRequests().antMatchers("/api/company/**").permitAll()
 
 //			.antMatchers(
 //					"/api/s3service/uploadFile"
@@ -98,36 +87,32 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                    ,"/api/account/getAccountTransactionByGroupType/**"
 //                    ,"/api/user/getCurrency"
 //			 ).permitAll()
-			.antMatchers(HttpMethod.GET, "/api/s3service/**").permitAll()
-			.antMatchers(HttpMethod.OPTIONS, "https://dockket.com/").permitAll()
-			.antMatchers(HttpMethod.OPTIONS, "https://test.dockket.com/").permitAll()
-			.anyRequest().authenticated();
-				
-        http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
-    }
-    
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/v2/api-docs",
-                                   "/configuration/ui",
-                                   "/swagger-resources/**",
-                                   "/configuration/security",
-                                   "/swagger-ui.html",
-                                   "/webjars/**");
-    }
-    
-    @Bean
-    CorsConfigurationSource corsConfigurationSource() {
-    	CorsConfiguration configuration = new CorsConfiguration();
+				.antMatchers(HttpMethod.GET, "/api/s3service/**").permitAll()
+				.antMatchers(HttpMethod.OPTIONS, "https://dockket.com/").permitAll()
+				.antMatchers(HttpMethod.OPTIONS, "https://test.dockket.com/").permitAll().anyRequest().authenticated();
+
+		http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+	}
+
+	@Override
+	public void configure(WebSecurity web) throws Exception {
+		web.ignoring().antMatchers("/v2/api-docs", "/configuration/ui", "/swagger-resources/**",
+				"/configuration/security", "/swagger-ui.html", "/webjars/**");
+	}
+
+	@Bean
+	CorsConfigurationSource corsConfigurationSource() {
+		CorsConfiguration configuration = new CorsConfiguration();
 //        configuration.setAllowedOrigins(Arrays.asList("http://127.0.0.1:5500","https://prodapi.dockket.com","https://testapi.dockket.com", 
 //        		"https://dockket.com","*"));
-        configuration.setAllowCredentials(true);
-        configuration.setAllowedHeaders(Arrays.asList("Access-Control-Allow-Headers","Access-Control-Allow-Origin","Access-Control-Request-Method", 
-        		"Access-Control-Request-Headers","Origin","Cache-Control", "Content-Type", "Authorization"));
-        configuration.setAllowedMethods(Arrays.asList("DELETE", "GET", "POST", "PATCH", "PUT"));
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
-    }
-   
+		configuration.setAllowCredentials(true);
+		configuration.setAllowedHeaders(Arrays.asList("Access-Control-Allow-Headers", "Access-Control-Allow-Origin",
+				"Access-Control-Request-Method", "Access-Control-Request-Headers", "Origin", "Cache-Control",
+				"Content-Type", "Authorization"));
+		configuration.setAllowedMethods(Arrays.asList("DELETE", "GET", "POST", "PATCH", "PUT"));
+		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+		source.registerCorsConfiguration("/**", configuration);
+		return source;
+	}
+
 }

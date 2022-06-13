@@ -142,4 +142,11 @@ public class Company {
     private String companyZipCode;
 
     private Boolean isBilling;
+
+	public String AddressDetails;
+
+	public String ContactAddressDetails() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

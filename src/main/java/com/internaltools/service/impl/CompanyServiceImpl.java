@@ -156,6 +156,7 @@ public class CompanyServiceImpl implements CompanyService {
 
 		for (Company company : companyList) {
 			CompanyModel companyModel = new CompanyModel();
+		companyModel.setCompanyId(company.getCompanyId());
 			companyModel.setCompanyName(company.getCompanyName());
 			companyModel.setCompanyCode(company.getCompanyCode());
 			companyModel.setWebsite(company.getWebsite());
@@ -170,12 +171,14 @@ public class CompanyServiceImpl implements CompanyService {
 			companyModel.setRegisterationNumber(company.getRegisterationNumber());
 			companyModel.setServices(company.getServices());
 			companyModel.setBankDetails(company.getBankDetails());
+			companyModel.setAddressDetails(company.getAddressDetails());
 			companyModel.setInvoicePrefix(company.getInvoicePrefix());
 			companyModel.setBankName(company.getBankName());
 			companyModel.setIfscCode(company.getIfscCode());
 			companyModel.setBranchName(company.getBranchName());
 			companyModel.setAccountHolderName(company.getAccountHolderName());
 			companyModel.setAccountNumber(company.getAccountNumber());
+			companyModel.setContactAddressDetails(company.getAddressDetails());
 			companyModel.setReenterAccountNumber(company.getReenterAccountNumber());
 			companyModel.setSwiftCode(company.getSwiftCode());
 			companyModel.setContactAddress1(company.getContactAddress1());
@@ -184,6 +187,7 @@ public class CompanyServiceImpl implements CompanyService {
 			companyModel.setContactCity(company.getContactCity());
 			companyModel.setContactState(company.getContactState());
 			companyModel.setContactZipCode(company.getContactZipCode());
+			companyModel.setIsBilling(company.getIsBilling());
 			companyModel.setContactName(company.getContactName());
 			companyModel.setContactDesignation(company.getContactDesignation());
 			companyModel.setContactEmailId(company.getContactEmailId());
@@ -194,6 +198,7 @@ public class CompanyServiceImpl implements CompanyService {
 			companyModel.setCompanyCountry(company.getCompanyCountry());
 			companyModel.setCompanyState(company.getCompanyState());
 			companyModel.setCompanyZipCode(company.getCompanyZipCode());
+			companyModel.setPrimaryAddress(company.getPrimaryAddress());
 			companyModelList.add(companyModel);
 		}
 

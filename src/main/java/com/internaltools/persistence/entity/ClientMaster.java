@@ -79,5 +79,10 @@ public class ClientMaster {
 	@JoinColumn(name = "COMPANY_ID", referencedColumnName = "companyId")
 	private Company company;
 
+	public Long getCompanyID() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }
