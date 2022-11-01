@@ -7,9 +7,9 @@ spring:
     name: Internaltools
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://ec2-34-247-72-29.eu-west-1.compute.amazonaws.com:5432/dk7cci8uktorf
-    username: hvnvushmupvvix
-    password: 17cabb6948896843e32517d557afbc4ef6d47ee72eec76f22926d9bfbe177e70
+    url: jdbc:postgresql://ec2-34-247-72-29.eu-west-1.compute.amazonaws.com:5432/denieekdp2v84b
+    username: apbtdofrozamil
+    password: 3a5a7f42debd5dee15e78da14f36fce308438740a50e76af2aa9487e44be601c
     initialization-mode: never
   jpa:
     show-sql: true
