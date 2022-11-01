@@ -37,7 +37,7 @@ public class TokenServiceImpl implements TokenService {
 		userToken.setCreatedBy(userId);
 		userToken.setIsActive("Y");
 		userToken.setToken(token);
-		userToken.setUserid(Long.valueOf(userId));
+		userToken.setId(Long.valueOf(userId));
 		userToken.setUserName(userName);
 		return userToken;
 	}

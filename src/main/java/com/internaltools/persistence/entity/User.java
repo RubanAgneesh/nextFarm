@@ -1,17 +1,15 @@
 package com.internaltools.persistence.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.envers.Audited;
+
+import com.internaltools.persistence.model.audit.DateAudit;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,37 +23,68 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Audited
-public class User { //extends DateAudit {
-	
+public class User extends DateAudit implements Serializable  {
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
-	@NotNull
-	private String email;
 	
-	@NotNull
-	@Size(max = 50)
+	@Size (max=30)
+	private String firstName;
+	
+	@Size(max=30)
+	private String lastName;
+
+	private String userEmailId;
+
 	private String password;
-	
-	
-	@ManyToOne(fetch = FetchType.LAZY, optional = true)
-	@JoinColumn(name = "ROLE_ID", referencedColumnName = "roleId")
-	private RoleMaster roleMaster;
 
+	private String imageUrl;
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = true)
-	@JoinColumn(name = "COMPANY_ID", referencedColumnName = "companyId")
-	private Company company;
+	private String imageKey;
+
+	private String imagePath;
+
+	@Column(columnDefinition = "boolean default false")
+	private boolean isActive;
 	
-	@NotNull
-	private String userName;
+	@Column(columnDefinition = "boolean default false")
+	private boolean isRegistered;
+
+	private String firebaseNotificationToken;
 	
-	private String token;
+	@Transient
+	private String changePasswordToken;
+
+	private int otp;
 	
-	private Boolean active;
-	
+	private int otpCount;
+
+	private String voterId;
+
+	private String aadharNumber;
+
+	private String aadharName;
+
+	private String mobileNumber;
+
+	private String gender;
+
+	private String fatherName;
+
+	private String country;
+
+	private String state;
+
+	private String district;
+
+	private String village;
+
+	private String pinCode;
+
+	private String assemblyConstituency;
+
 
 }

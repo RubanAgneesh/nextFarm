@@ -60,20 +60,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
-				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
-				.antMatchers("/api/client/**").permitAll().and().authorizeRequests().antMatchers("/api/company/**")
-				.permitAll().and().authorizeRequests().antMatchers("/api/bank/**").permitAll().and().authorizeRequests()
-				.antMatchers("/api/address/**").permitAll().and().authorizeRequests().antMatchers("/api/billaddress/**")
-				.permitAll().and().authorizeRequests().antMatchers("/api/invoice/**").permitAll().and()
-				.authorizeRequests().antMatchers("/api/company/getByCompanyId/**").permitAll().and().authorizeRequests()
-				.antMatchers("/api/company/companies/**").permitAll().and().authorizeRequests()
-				.antMatchers("/api/company/**").permitAll().and().authorizeRequests()
-				.antMatchers("/api/client/clients/**").permitAll().and().authorizeRequests()
-				.antMatchers("/api/country/**").permitAll().and().authorizeRequests().antMatchers("/api/tax/**")
-				.permitAll().and().authorizeRequests().antMatchers("/api/tax/getByTaxId/**").permitAll()
-
-				.and().authorizeRequests().antMatchers("/api/company/**").permitAll()
+		http.cors().and().csrf().disable()
+				.exceptionHandling().authenticationEntryPoint(unauthorizedHandler)
+				.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+				.and().authorizeRequests().antMatchers("/api/signup/**").permitAll()
 
 //			.antMatchers(
 //					"/api/s3service/uploadFile"
@@ -89,6 +79,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //			 ).permitAll()
 				.antMatchers(HttpMethod.GET, "/api/s3service/**").permitAll()
 				.antMatchers(HttpMethod.OPTIONS, "https://dockket.com/").permitAll()
+				.antMatchers(HttpMethod.OPTIONS, "https://localhost:3000/").permitAll()
 				.antMatchers(HttpMethod.OPTIONS, "https://test.dockket.com/").permitAll().anyRequest().authenticated();
 
 		http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
@@ -103,8 +94,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Bean
 	CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration();
-//        configuration.setAllowedOrigins(Arrays.asList("http://127.0.0.1:5500","https://prodapi.dockket.com","https://testapi.dockket.com", 
-//        		"https://dockket.com","*"));
+		configuration.setAllowedOrigins(Arrays.asList("http://127.0.0.1:5500","https://devitapi.dockket.com",
+				"*"));
 		configuration.setAllowCredentials(true);
 		configuration.setAllowedHeaders(Arrays.asList("Access-Control-Allow-Headers", "Access-Control-Allow-Origin",
 				"Access-Control-Request-Method", "Access-Control-Request-Headers", "Origin", "Cache-Control",

@@ -11,17 +11,16 @@ import com.internaltools.persistence.entity.ResetUserPassword;
 public interface ResetUserPasswordRepository extends JpaRepository<ResetUserPassword, Long> {
 
 	/**
-	 * @param otp
-	 * @param otpValid
-	 * @param mobileNumber
-	 * @return Optional<ResetUserPassword>
-	 */
-	Optional<ResetUserPassword> findByOtpAndOtpValidAndUserUserName(Integer otp, boolean otpValid,String email);
-
-	/**
 	 * @param userId
 	 * @return List<Optional<ResetUserPassword>> 
 	 */
 	List<Optional<ResetUserPassword>> findByUserId(Long userId);
 
+
+	/**
+	 * @param otp
+	 * @param otpValid
+	 * @return Optional<ResetUserPassword>
+	 */
+	Optional<ResetUserPassword> findByOtpAndOtpValidAndUserUserEmailId(Integer otp, boolean otpValid,String email);
 }

@@ -1,6 +1,5 @@
 package com.internaltools.persistence.repository;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,5 +13,7 @@ import com.internaltools.persistence.entity.RoleMaster;
  */
 @Repository
 public interface RoleMasterRepository extends JpaRepository<RoleMaster, Long> {
+
+	Optional<RoleMaster> findById(Long id);
 
 }

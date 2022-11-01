@@ -1,5 +1,6 @@
-package com.internaltools.service.model;
+package com.internaltools.payload.request;
 
+import com.internaltools.service.model.UserCreateModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,17 +8,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
-public class UserCreateModel {
-
-	private Long id;
-
+public class SignUpRequest {
+    
 	private String firstName;
-
+	
 	private String lastName;
-
+	
 	private String userEmailId;
-
+	
 	private String password;
 
 	private String voterId;
@@ -43,11 +41,11 @@ public class UserCreateModel {
 	private String pinCode;
 
 	private String assemblyConstituency;
-	private String companyName;
-
-	private String countryName;
-
-	private String currency;
+    private String companyName;
+    
+    private String countryName;
+    
+    private String currency;
 
 	public Integer otp;
 
@@ -56,10 +54,10 @@ public class UserCreateModel {
 	private String imageKey;
 
 	private Long countryId;
-
+	
 	private Long currencyId;
 
 	private String imagePath;
 
-
+	UserCreateModel userCreateModel;
 }

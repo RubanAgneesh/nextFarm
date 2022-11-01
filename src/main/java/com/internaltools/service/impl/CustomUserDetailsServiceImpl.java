@@ -22,7 +22,7 @@ public class CustomUserDetailsServiceImpl implements UserDetailsService {
     @Transactional
     public UserDetails loadUserByUsername(String usernameOrEmail) throws UsernameNotFoundException {
     	
-        User user = userRepository.findByUserName(usernameOrEmail.toLowerCase()) 
+        User user = userRepository.findByUserEmailId(usernameOrEmail.toLowerCase())
                 .orElseThrow(() ->
                         new UsernameNotFoundException("User not found with username or email : " + usernameOrEmail.toLowerCase())
         );

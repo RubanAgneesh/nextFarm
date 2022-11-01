@@ -1,5 +1,6 @@
 package com.internaltools.persistence.entity;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
@@ -29,10 +30,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "reset_user_password")
 @Builder
 @Audited
-public class ResetUserPassword extends DateAudit {
-
+public class ResetUserPassword extends DateAudit implements Serializable {
 	private static final long serialVersionUID = 1L;
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;

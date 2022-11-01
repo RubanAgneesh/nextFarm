@@ -8,10 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.internaltools.payload.request.ClientMasterRequest;
 import com.internaltools.payload.request.UserCreateRequest;
 import com.internaltools.payload.response.ApiResponse;
-import com.internaltools.service.ClientMasterService;
 import com.internaltools.service.UserService;
 
 import io.swagger.annotations.Api;
@@ -19,7 +17,6 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.SwaggerDefinition;
 import io.swagger.annotations.Tag;
-import lombok.extern.slf4j.Slf4j;
 
 @Api(tags = { "User Controller" })
 @SwaggerDefinition(tags = { @Tag(name = "User details", description = "User Details") })

@@ -7,9 +7,9 @@ spring:
     name: Internaltools
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5433/internaltools
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://ec2-34-247-72-29.eu-west-1.compute.amazonaws.com:5432/dk7cci8uktorf
+    username: hvnvushmupvvix
+    password: 17cabb6948896843e32517d557afbc4ef6d47ee72eec76f22926d9bfbe177e70
     initialization-mode: never
   jpa:
     show-sql: true
@@ -23,7 +23,7 @@ spring:
       temp:
         use_jdbc_metadata_defaults: false
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
       show-sql: true
       database: internaltools
       database-platform: org.hibernate.dialect.PostgreSQLDialect

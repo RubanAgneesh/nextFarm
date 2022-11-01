@@ -18,5 +18,8 @@ public class UserRegisterResponse extends ApiResponse implements Serializable {
 	private Boolean partiallyRegistered;
 	
 	private Boolean exceedOtpCount;
-	
+
+	private Long userId;
+
+
 }

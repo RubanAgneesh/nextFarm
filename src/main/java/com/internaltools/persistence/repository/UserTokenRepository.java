@@ -32,6 +32,6 @@ public interface UserTokenRepository extends JpaRepository<UserToken, Long> {
 	 */
 	@Modifying
 	@Transactional
-	@Query("Update UserToken token set token.isActive= 'N' where token.userid = :userId")
-	int inactiveAllTokenForUser(Long userId);
+	@Query("Update UserToken token set token.isActive= 'N' where token.id = :Id")
+	int inactiveAllTokenForUser(Long Id);
 }

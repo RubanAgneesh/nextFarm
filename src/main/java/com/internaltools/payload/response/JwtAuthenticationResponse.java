@@ -19,5 +19,4 @@ public class JwtAuthenticationResponse extends ApiResponse {
         this.accessToken = accessToken;
     }
 
- 
 }

@@ -1,6 +1,8 @@
 package com.internaltools.persistence.entity;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,13 +31,13 @@ import lombok.NoArgsConstructor;
 @Table(name = "user_registration")
 @Builder
 @Audited
-public class UserRegistration extends DateAudit {
+public class UserRegistration extends DateAudit  implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Long registrationId;
 
 	@ManyToOne(fetch = FetchType.EAGER, optional = true)
 	@JoinColumn(name = "USER_ID", referencedColumnName = "id")
@@ -52,4 +54,8 @@ public class UserRegistration extends DateAudit {
 	
 	private boolean registered;
 	
+	private String createdBy;
+	
+	private String modifiedBy;
+
 }

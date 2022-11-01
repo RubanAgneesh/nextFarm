@@ -15,11 +15,13 @@ import com.internaltools.persistence.entity.User;
 
 @Repository
 
-
 public interface UserRepository extends JpaRepository<User, Long> {
 
-	Optional<User> findByUserName(String lowerCase);
+	Optional<User> findByUserEmailId(String userEmailId);
 
+	Optional<User> getById(Long id);
+
+    Optional<User> userEmailId(String emailUsername);
 }
 
 

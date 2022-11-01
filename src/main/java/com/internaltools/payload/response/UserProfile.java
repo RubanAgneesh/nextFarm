@@ -51,5 +51,5 @@ public class UserProfile extends ApiResponse {
 	private boolean isDeleted;
 	
 	private String gender;
-	
+
 }

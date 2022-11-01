@@ -12,22 +12,23 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.internaltools.persistence.entity.User;
 
 public class UserPrincipal implements UserDetails {
-	
-	private static final long serialVersionUID = 1L;
 
-	private Long id;
-	
-	@JsonIgnore
-    private String username;
+    private static final long serialVersionUID = 1L;
+
+    private Long id;
+
+    @JsonIgnore
+    private String userEmailId;
+
 
     @JsonIgnore
     private String password;
 
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserPrincipal(Long id, String username, String password, Collection<? extends GrantedAuthority> authorities) {
+    public UserPrincipal(Long id, String userEmailId, String password, Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
-        this.username = username;
+        this.userEmailId = userEmailId;
         this.password = password;
         this.authorities = authorities;
     }
@@ -38,19 +39,18 @@ public class UserPrincipal implements UserDetails {
 
         return new UserPrincipal(
                 user.getId(),
-                user.getUserName(),
+                user.getUserEmailId(),
                 user.getPassword(),
                 authorities
         );
     }
 
-    public Long getId() {
+    public Long getid() {
         return id;
     }
 
-    @Override
-    public String getUsername() {
-        return username;
+    public String getUserEmailId() {
+        return userEmailId;
     }
 
     @Override
@@ -96,4 +96,15 @@ public class UserPrincipal implements UserDetails {
 
         return Objects.hash(id);
     }
+
+    @Override
+    public String getUsername() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+
+
+
 }
